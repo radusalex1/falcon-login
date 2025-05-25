@@ -1,0 +1,14 @@
+[project]
+name = "falcon-login"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aioboto3>=14.3.0",
+    "bcrypt>=4.3.0",
+    "falcon>=4.0.2",
+    "types-aioboto3>=14.3.0",
+    "types-aiobotocore-dynamodb>=2.22.0",
+    "uvicorn>=0.34.2",
+]

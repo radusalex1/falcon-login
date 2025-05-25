@@ -1,0 +1,10 @@
+services: 
+  dynamodb-local:
+    container_name: accu_wather_dynamodb
+    image: amazon/dynamodb-local
+    ports:
+      - "8000:8000"
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    volumes:
+      - "./docker/dynamodb:/home/dynamodblocal/data"
+  
