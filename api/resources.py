@@ -12,6 +12,7 @@ class RegisterUserResource:
     async def on_post(self, req: falcon.asgi.Request, resp: falcon.asgi.Response):
         """Method to perform register on user"""
         payload: dict = await req.get_media()
+
         new_user: User = (
             User(email=payload["email"], password=payload["password"])
             .validate_clear_password()
@@ -21,10 +22,10 @@ class RegisterUserResource:
         if await self.repository.get_user(new_user) is not None:
             resp.media = {"message":"There is already a user with this emal"}
             resp.status = falcon.HTTP_400
-
-        await self.repository.create_user(new_user)
-        resp.media = asdict(new_user)
-        resp.status = falcon.HTTP_201
+        else:
+            await self.repository.create_user(new_user)
+            resp.media = asdict(new_user)
+            resp.status = falcon.HTTP_201
         return resp
 
 
@@ -35,13 +36,11 @@ class LoginUserResource:
     async def on_post(self, req: falcon.asgi.Request, resp: falcon.asgi.Response):
         """Method to perform login for user"""
         payload: dict = await req.get_media()
-        try:
-            existing_user: User = await self.repository.get_user(
-                user=User(email=payload["email"], password=payload["password"])
-            )
-        except Exception as e:
-            print(e)
-
+        
+        existing_user: User = await self.repository.get_user(
+            user=User(email=payload["email"], password=payload["password"])
+        )
+        
         if existing_user is None:
             resp.media = {"message": "Invalid email"}
             resp.status = falcon.HTTP_400
