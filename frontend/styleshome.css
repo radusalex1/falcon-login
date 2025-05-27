@@ -1,0 +1,142 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow: hidden;
+    height: 100%;
+}
+
+.HOME2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; 
+    background-image: url('./IMAGINI/HOME2.svg'); 
+    background-size: 105%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: bg-breathing 50s infinite ease-in-out; /*aici*/
+}
+
+.center-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1; 
+    text-align: center;
+    overflow: visible;
+}
+
+.center-content p {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 100px;
+    color: #7dd18a;
+    text-shadow:
+        -3px -3px 0 #156921,
+         3px -3px 0 #156921,
+        -3px  3px 0 #156921,
+         3px  3px 0 #156921,
+         0px -3px 0 #156921,
+         0px  3px 0 #156921,
+        -3px  0px 0 #156921,
+         3px  0px 0 #156921;
+    animation: wel-breathing 4s infinite ease-in-out; /*aici*/
+    margin-bottom: 50px; 
+    transition: all 0.3s ease;
+}
+
+
+.center-content p:hover {
+    color: #9df1a8; 
+    text-shadow:
+        -4px -4px 0 #1a8c2e,
+         4px -4px 0 #1a8c2e,
+        -4px  4px 0 #1a8c2e,
+         4px  4px 0 #1a8c2e,
+         0px -4px 0 #1a8c2e,
+         0px  4px 0 #1a8c2e,
+        -4px  0px 0 #1a8c2e,
+         4px  0px 0 #1a8c2e;
+}
+
+
+
+.center-content h1 {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 60px;
+    color: #7dd18a;
+    text-shadow:
+        -3px -3px 0 #156921,
+         3px -3px 0 #156921,
+        -3px  3px 0 #156921,
+         3px  3px 0 #156921;
+    animation: wel-breathing 8s infinite ease-in-out; /*aici*/
+    margin-top: 20px; 
+    margin-bottom: 90px;
+}
+
+
+.nav-btn {
+    font-family: 'Cherry Bomb One', cursive !important;
+    background-color: #7dd18a !important; 
+    color: #ffffff !important; 
+    padding: 15px 35px !important; 
+    border-radius: 30px !important; 
+    font-size: 1.9rem !important; 
+    font-weight: bold !important; 
+    text-decoration: none !important; 
+    transition: all 0.3s ease !important; 
+    border: none !important; 
+    display: inline-block !important; 
+    text-align: center !important; 
+    opacity: 1 !important; 
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 15px;
+    animation: butoane_saltarete 6s infinite ease-in-out;
+}
+
+.nav-btn:hover {
+    background-color: #226822 !important; 
+    transform: scale(1.05) !important; 
+    color: #ffffff !important; 
+}
+
+
+
+
+  @keyframes wel-breathing {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.009);
+    }
+}
+@keyframes bg-breathing {
+    0%, 100% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(2.01); 
+    }
+}
+@keyframes butoane_saltarete {
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.06);
+    }
+    
+}

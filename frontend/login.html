@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Register</title>
+  <link rel="stylesheet" href="LOGIN.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+
+<body>
+  <div class="container">
+   
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="login-form" oninput="toggleForm('register-form', this)">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+            
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="register-form" oninput="toggleForm('login-form', this)">            
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
+            
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" name="password" placeholder="Enter your password" required>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+  <div class="backgroundlog"></div>
+
+  <script src="NCB.js"></script>
+
+
+  
+  
+
+</body>
+</html>

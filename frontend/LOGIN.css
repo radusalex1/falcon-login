@@ -1,0 +1,127 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  .container {
+    display: flex; 
+    flex-direction: row; 
+    gap: 90px; 
+    justify-content: center; 
+    transition: all 0.3s ease;
+    color:#4CAF50;
+}
+    .container:hover {
+        color:#4CAF50;
+        transform: scale(1.5);
+
+    }
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+  
+  h2 {
+    font-family: 'Cherry Bomb One', cursive;
+    text-align: center;
+  color: #7dd18a !important; 
+  text-shadow:
+    -2px -2px 0 #156921, 
+     2px -2px 0 #156921, 
+    -2px  2px 0 #156921, 
+     2px  2px 0 #156921; 
+     font-size: 70px !important;
+     animation: form 6s infinite ease-in-out;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    
+  }
+  
+  input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    font-family: 'Cherry Bomb One', cursive !important;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 40px !important;
+    cursor: pointer;
+    margin-top: 20px !important;
+    font-size: 30px !important;
+    transition: all 0.3s ease !important;
+    
+}
+
+button:hover {
+    background-color: #2b8d30;
+    transform: scale(1.10);
+}
+
+.backgroundlog {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; 
+    background-image: url('./IMAGINI/loginbg.svg') !important;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: -1;
+    animation: log 30s infinite ease-in-out;
+}
+
+
+@keyframes log {
+    0%, 100%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.5);
+    }
+  }
+  @keyframes form {
+    0%, 100%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.05);
+    }
+  }
+
+  .form-container.disabled {
+    opacity: 0.5; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+}
+
+
+input:disabled,
+button:disabled {
+    background-color: #e0e0e0; 
+    color: #a0a0a0; 
+    cursor: not-allowed; 
+    border: 1px solid #cccccc; 
+}

@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.about-it1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; 
+    background-image: url('./IMAGINI/about-it.svg'); 
+    background-size: 105%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: aboutbreath 20s infinite ease-in-out;
+}
+
+.center-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1; 
+    text-align: center;
+    overflow: visible;
+
+}
+
+.center-content p {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 40px;
+    color: #7dd18a;
+    text-shadow:
+        -2px -2px 0 #156921,
+         2px -2px 0 #156921,
+        -2px  2px 0 #156921,
+         2px  2px 0 #156921,
+         0px -2px 0 #156921,
+         0px  2px 0 #156921,
+        -2px  0px 0 #156921,
+         2px  0px 0 #156921;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    animation: move-contact 10s infinite ease-in-out;
+}
+
+
+
+@keyframes aboutbreath {
+    0%,100%{
+        transform: scale(1);
+    }50%{
+        transform: scale(1.1);
+    }
+    
+}
+@keyframes move-contact {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+.button-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 10px; 
+}
+
+.btn-with-icon {
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+}
+
+.btn-with-icon img {
+    display: block;
+    width: 150px; 
+    height: 150px;
+}
