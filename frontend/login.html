@@ -55,8 +55,59 @@
   <script src="NCB.js"></script>
 
 
-  
-  
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Login successful!');
+                // You can redirect or store tokens here
+            } else {
+                alert(`Login failed: ${result.message || 'Unknown error'}`);
+            }
+        } catch (error) {
+            alert('Network error during login');
+            console.error(error);
+        }
+    });
+
+    document.getElementById('register-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+
+        try {
+            const response = await fetch('http://localhost:8080/api/v1/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Registration successful!');
+                // Optionally switch to login form or auto-login
+            } else {
+                alert (`Registration failed: ${result.message || 'Unknown error'}`);
+            }
+        } catch (error) {
+            alert('Network error during registration');
+            console.error(error);
+        }
+    });
+</script>  
 
 </body>
 </html>
