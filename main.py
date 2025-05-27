@@ -10,7 +10,7 @@ import config
 from domain.errors import DomainValidationError
 
 if __name__ == "__main__":
-    app = falcon.asgi.App()
+    app = falcon.asgi.App(cors_enable=True)
     repository: DynamoDBRepository = DynamoDBRepository(
         table_name=config.DYNAMODB_TABLE_NAME,
         endpoint_url=config.DYNAMODB_URL,
