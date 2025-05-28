@@ -28,6 +28,7 @@ body {
     border-radius: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 350px;
+    font-family: "Cherry Bomb One" ,cursive !important;
 }
   
   h2 {
@@ -42,6 +43,14 @@ body {
      font-size: 70px !important;
      animation: form 6s infinite ease-in-out;
   }
+  
+  
+  .form-container.disabled h2 {
+    color: #a0a0a0 !important;
+    text-shadow: none !important;
+}
+
+  
   
   label {
     display: block;

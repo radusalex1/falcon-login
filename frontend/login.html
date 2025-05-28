@@ -31,21 +31,23 @@
             <label for="login-password">Password:</label>
             <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
             
-            <button type="submit">Login</button>
+            <button type="submit" onclick="login()">Login</button>
         </form>
     </div>
 
     
     <div class="form-container">
         <h2>Register</h2>
-        <form id="register-form" oninput="toggleForm('login-form', this)">            
+        <form id="register-form" oninput="toggleForm('login-form', this)">
+            
+            
             <label for="register-email">Email:</label>
             <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
             
             <label for="register-password">Password:</label>
             <input type="password" id="register-password" name="password" placeholder="Enter your password" required>
             
-            <button type="submit">Register</button>
+            <button type="submit" onclick="register()">Register</button>
         </form>
     </div>
 </div>
@@ -54,8 +56,9 @@
 
   <script src="NCB.js"></script>
 
-
-  <script>
+</body>
+</html>
+<script>
     document.getElementById('login-form').addEventListener('submit', async function (e) {
         e.preventDefault();
         const email = document.getElementById('login-email').value;
@@ -72,9 +75,9 @@
 
             if (response.ok) {
                 alert('Login successful!');
-                // You can redirect or store tokens here
+               
             } else {
-                alert("Login failed:" + result.message);
+                alert(`Login failed: ${result.message || 'Unknown error'}`);
             }
         } catch (error) {
             alert('Network error during login');
@@ -98,16 +101,14 @@
 
             if (response.ok) {
                 alert('Registration successful!');
-                // Optionally switch to login form or auto-login
+                
             } else {
-                alert ("Registration failed:" + result.message);
+                alert(`Registration failed: ${result.message || 'Unknown error'}`);
             }
         } catch (error) {
             alert('Network error during registration');
             console.error(error);
         }
     });
-</script>  
-
-</body>
-</html>
+</script>
+</script>

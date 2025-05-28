@@ -20,7 +20,7 @@ class RegisterUserResource:
         )
 
         if await self.repository.get_user(new_user) is not None:
-            resp.media = {"message":"There is already a user with this emal"}
+            resp.media = {"message":"There is already a user with this email"}
             resp.status = falcon.HTTP_400
         else:
             await self.repository.create_user(new_user)
